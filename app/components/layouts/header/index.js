@@ -29,14 +29,20 @@ const Header = ({ data }) => {
                 <div className="container">
                     <div className="header-inner-data flex justify-around items-center">
                     <Link href="/">
-								
-									{
-										siteLogoUrl ? (
-                                            <Image className="mr-2" src={ siteLogoUrl } alt={ `${ siteTitle } logo` }
-											     width="100%"
-											     height=""/>
-										) : <TailwindIcon/>
-									}
+
+
+	    {
+		     <Image
+            // style={{ width:100 , height : 400 }} 
+            src={ siteLogoUrl}
+            width={'500px'}
+            height={'500px'}
+            alt="Picture of the author"
+            
+            
+            />
+	    }
+					
 								
 							</Link>      
 
