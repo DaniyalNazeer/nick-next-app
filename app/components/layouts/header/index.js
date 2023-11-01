@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { isEmpty, isArray } from 'lodash';
 import  getPathNameFromUrl  from '../../../../src/utils/miscellaneous';
+import Image from 'next/image'
 
 
 const Header = ({ data }) => {
@@ -31,7 +32,7 @@ const Header = ({ data }) => {
 								
 									{
 										siteLogoUrl ? (
-											<img className="mr-2" src={ siteLogoUrl } alt={ `${ siteTitle } logo` }
+                                            <Image className="mr-2" src={ siteLogoUrl } alt={ `${ siteTitle } logo` }
 											     width="100%"
 											     height=""/>
 										) : <TailwindIcon/>
