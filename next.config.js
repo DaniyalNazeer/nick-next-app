@@ -4,6 +4,10 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+        // images: {
+          
+        //   formats:['image/webp']
+        // },
 /* ...Your other config rules */
 }
 

@@ -46,10 +46,10 @@ const Header = ({ data }) => {
 
                             { ! isEmpty( headerMenuItems ) && headerMenuItems.length ? headerMenuItems.map( menuItem => (
 								<li className="mr-2 ml-2">
-										<a href="#"
+										{ <a href="#"
 										   dangerouslySetInnerHTML={ { __html: menuItem.title } } >
                                         
-                                       </a>
+                                       </a> }
                                 </li>   
 									
 								) ) : null }

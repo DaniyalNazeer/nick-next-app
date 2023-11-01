@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import axios from 'axios';
-import Image from 'next/image'
+import Image from "next/image"; 
 import Header from './components/layouts/header';
 import Footer from './components/layouts/footer';
+import bannerImg from '../public/images/banner.webp'
+import morisonImg from '../public/images/morrison.webp'
+import borofficeImg from '../public/images/boroffice.webp'
 // import type {  GetStaticProps } from 'next'
 
   const getData = (async (context) => {
@@ -31,7 +32,7 @@ const  Home = async  ()=> {
     
     <div >
 
-<Header data={header } />
+{ <Header data={header } /> }
     
     <main className="">
      
@@ -41,8 +42,16 @@ const  Home = async  ()=> {
           <div className='banner-inner-content'>
             <h1>Partner with a <br/><strong>Proven <span>Ally</span></strong> <br/>for <strong>Estate</strong></h1>
           </div>
-          <div className='banner-inner-img'>
-            <Image src="./images/banner.webp" alt="banner" />
+          <div >
+            <Image
+            // style={{ width:100 , height : 400 }} 
+            src={ bannerImg}
+            width={'500px'}
+            height={'500px'}
+            alt="Picture of the author"
+            
+            
+            />
           </div>
         </div>
       </div>
@@ -52,7 +61,16 @@ const  Home = async  ()=> {
       <div className='container'>
         <div className='about-info-inner flex flex-row items-center justify-center'>
           <div className='about-info-img'>
-          <Image src="./images/boroffice.webp" alt="banner" />
+          {/* <Image src="./images/boroffice.webp" alt="banner" /> */}
+          <Image
+            // style={{ width:100 , height : 400 }} 
+            src={ morisonImg}
+            width={'500px'}
+            height={'500px'}
+            alt="Picture of the author"
+            
+            
+            />
           </div>
           <div className='about-info-box'>
               <h2>About Us</h2>
@@ -69,7 +87,17 @@ const  Home = async  ()=> {
               <a href="void:;" className='read-more flex flex-row justify-center'>Portfolio</a>
           </div>
           <div className='about-info-img about-info-img2'>
-          <Image src="./images/morrison.webp" alt="banner" />
+          {/* <Image src="./images/morrison.webp" alt="banner" /> */}
+          <Image
+            // style={{ width:100 , height : 400 }} 
+            src={ borofficeImg}
+            width={'500px'}
+            height={'500px'}
+            alt="Picture of the author"
+            
+            
+            />
+          
           </div>
         </div>
       </div>
