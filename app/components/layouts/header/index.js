@@ -32,9 +32,14 @@ const Header = ({ data }) => {
 								
 									{
 										siteLogoUrl ? (
-                                            <Image className="mr-2" src={ siteLogoUrl } alt={ `${ siteTitle } logo` }
-											     width="100%"
-											     height=""/>
+                                            <Image className="mr-2" 
+                                            src={ siteLogoUrl }
+                                             alt={ `${ siteTitle } 
+                                             logo` 
+                                            }
+                                            width={'100%'}
+											height={'100%'}
+                                            />
 										) : <TailwindIcon/>
 									}
 								
