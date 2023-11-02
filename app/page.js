@@ -32,7 +32,7 @@ const  Home = async  ()=> {
     
     <div >
 
-{ <Header data={header } /> }
+ <Header data={header } /> 
     
     <main className="">
      
