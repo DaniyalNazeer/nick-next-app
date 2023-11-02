@@ -13,6 +13,7 @@ const getData = async (context) => {
     const res = await fetch(url);
     const repo = await res.json();
     return repo;
+    revalidate: 1
   } catch (error) {}
 };
 const Home = async () => {
