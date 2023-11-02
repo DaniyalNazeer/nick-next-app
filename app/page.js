@@ -10,7 +10,6 @@ const getData = async (context) => {
   const url = `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer`;
 
   try {
-    // const url = 'https://allycapitalgroup.chiccolacreative.com/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer'
     const res = await fetch(url);
     const repo = await res.json();
     return repo;

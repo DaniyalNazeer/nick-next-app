@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { isEmpty, isArray } from "lodash";
 import getPathNameFromUrl from "../../../../src/utils/miscellaneous";
-import Image from "next/image";
+
 
 const Header = ({ data }) => {
   // console.log('header -------> ', data )
@@ -24,18 +24,15 @@ const Header = ({ data }) => {
           <div className="container">
             <div className="header-inner-data flex justify-around items-center">
               <Link href="/">
-                {siteLogoUrl ? (
-                  <Image
-                    className="mr-2"
-                    src={siteLogoUrl}
-                    alt={`${siteTitle} 
-                                             logo`}
-                    width={30}
-                    height={80}
-                  />
-                ) : (
-                  <TailwindIcon />
-                )}
+
+              {
+				siteLogoUrl ? (
+				<img className="mr-2" src={ siteLogoUrl } alt={ `${ siteTitle } logo` }
+				width="800"
+                height="800"/>
+				) : <TailwindIcon/>
+			    }
+                
               </Link>
 
               <ul className="navbar flex">

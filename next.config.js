@@ -4,6 +4,17 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'allycapitalgroup.chiccolacreative.com',
+            port: '',
+            pathname: '/account123/**',
+          },
+        ],
+      },
         // images: {
           
         //   formats:['image/webp']
