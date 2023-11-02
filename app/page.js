@@ -9,7 +9,7 @@ import borofficeImg from '../public/images/boroffice.webp'
   const getData = (async (context) => {
    
     try {
-      const res = await fetch('https://allycapitalgroup.chiccolacreative.com/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer');
+      const res = await fetch('${ process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL }/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer');
       const repo = await res.json()
       
       return repo 
@@ -32,7 +32,7 @@ const  Home = async  ()=> {
     
     <div >
 
-{ <Header data={header } /> }
+ <Header data={header } /> 
     
     <main className="">
      
