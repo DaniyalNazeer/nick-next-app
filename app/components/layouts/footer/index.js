@@ -7,7 +7,7 @@ import { isEmpty, isArray } from 'lodash';
 
 const Footer = ({ data }) => {
    
-    console.log('footer -------> ', data )
+    // console.log('footer -------> ', data )
 
     const { copyrightText, footerMenuItems, sidebarOne, sidebarTwo, socialLinks } = data;
 

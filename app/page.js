@@ -4,9 +4,10 @@ import Footer from "./components/layouts/footer";
 import bannerImg from "../public/images/banner.webp";
 import morisonImg from "../public/images/morrison.webp";
 import borofficeImg from "../public/images/boroffice.webp";
-// import type {  GetStaticProps } from 'next'
+
 
 const getData = async (context) => {
+ 
   const url = `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer`;
 
   try {
@@ -16,16 +17,14 @@ const getData = async (context) => {
     revalidate: 1
   } catch (error) {}
 };
-const Home = async () => {
+
+const Home = async (data) => {
+
   const {data:{ header , footer }} = await getData();
-
-
-  //const header = getStaticProps();
-  //  console.log("twst", header.then(e=> e ) )
 
   return (
     <div>
-      <Header data={header} />
+       <Header data={header} />
 
       <main className="">
         <div className="banner-main-wrap">
@@ -41,9 +40,8 @@ const Home = async () => {
                   for <strong>Estate</strong>
                 </h1>
               </div>
-              <div>
+              <div className="banner-inner-img">
                 <Image
-                  // style={{ width:100 , height : 400 }}
                   src={bannerImg}
                   width={"500px"}
                   height={"500px"}
@@ -58,7 +56,6 @@ const Home = async () => {
           <div className="container">
             <div className="about-info-inner flex flex-row items-center justify-center">
               <div className="about-info-img">
-                {/* <Image src="./images/boroffice.webp" alt="banner" /> */}
                 <Image
                   // style={{ width:100 , height : 400 }}
                   src={morisonImg}
@@ -106,9 +103,7 @@ const Home = async () => {
                 </a>
               </div>
               <div className="about-info-img about-info-img2">
-                {/* <Image src="./images/morrison.webp" alt="banner" /> */}
                 <Image
-                  // style={{ width:100 , height : 400 }}
                   src={borofficeImg}
                   width={"500px"}
                   height={"500px"}
@@ -120,53 +115,10 @@ const Home = async () => {
         </div>
       </main>
 
-      <Footer data={footer} />
+      <Footer data={footer} /> 
+
     </div>
   );
 };
 
 export default Home;
-
-//  const getStaticProps = (async (context) => {
-//   const res = await fetch('https://api.github.com/repos/vercel/next.js')
-//   const repo = await res.json()
-//   return { props: { repo } }
-// })
-// getStaticProps();
-//  async function getStaticProps() {
-
-// const  data  = await axios.get( 'http://localhost/nick/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer');
-// console.log("data", data )
-//   return{
-//   props: {
-
-//     data: data || {},
-
-//   },
-
-//   revalidate: 1,
-
-// };
-//  }
-
-// const getStaticProps = (async (context) => {
-
-//     try {
-//       const res = await fetch('http://localhost/nick/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer')
-//       const repo = await res.json()
-
-//       return repo
-
-//     } catch (error) {
-
-//     }
-//     getStaticProps();
-
-//   })
-
-// const getStaticProps = (async (context) => {
-//   const res = await fetch('https://api.github.com/repos/vercel/next.js')
-//   const repo = await res.json()
-//   console.log(repo )
-//   return { props: { repo } }
-// })

@@ -7,7 +7,8 @@ import getPathNameFromUrl from "../../../../src/utils/miscellaneous";
 
 
 const Header = ({ data }) => {
-  // console.log('header -------> ', data )
+   
+ //console.log('ddddddd -------> ', data )
 
   const { headerMenuItems, siteDescription, siteLogoUrl, siteTitle } = data;
 
@@ -36,9 +37,8 @@ const Header = ({ data }) => {
               </Link>
 
               <ul className="navbar flex">
-                {!isEmpty(headerMenuItems) && headerMenuItems.length
-                  ? headerMenuItems.map((menuItem) => (
-                      <li className="mr-2 ml-2">
+            {!isEmpty(headerMenuItems) && headerMenuItems.length ? headerMenuItems.map((menuItem, index ) => (
+                      <li key={index } className="mr-2 ml-2">
                         {
                           <a
                             href="#"
