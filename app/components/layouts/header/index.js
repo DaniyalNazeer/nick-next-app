@@ -30,33 +30,22 @@ const Header = ({ data }) => {
 				siteLogoUrl ? (
 				<img className="mr-2" src={ siteLogoUrl } alt={ `${ siteTitle } logo` }
 				width="800"
-                height="800"/>
+        height="800"/>
 				) : <TailwindIcon/>
 			    }
                 
               </Link>
 
               <ul className="navbar flex">
-            {!isEmpty(headerMenuItems) && headerMenuItems.length ? headerMenuItems.map((menuItem, index ) => (
-                      <li key={index } className="mr-2 ml-2">
-                        {
-                          <a
-                            href="#"
-                            dangerouslySetInnerHTML={{ __html: menuItem.title }}
-                          ></a>
-                        }
-                      </li>
-                    ))
-                  : null}
-
-                {/* <ul className="navbar flex">
-                            <li className="mr-2 ml-2"><a href="void:;">Home</a></li>
-                            <li className="mr-2 ml-2"><a href="void:;">About</a></li>
-                            <li className="mr-2 ml-2"><a href="void:;">Portfolio</a></li>
-                            <li className="mr-2 ml-2"><a href="void:;">In the News</a></li>
-                            <li className="mr-2 ml-2"><a href="void:;">Contact</a></li>
-                            <li className="mr-2 ml-2"><a href="void:;">Investor Portal</a></li>
-                        </ul> */}
+              { ! isEmpty( headerMenuItems ) && headerMenuItems.length ? headerMenuItems.map( (menuItem, index ) => (
+									<li key={index } className="mr-2 ml-2">
+                  <Link key={ menuItem?.ID }
+									      href={menuItem?.url ?? '/' }
+                        dangerouslySetInnerHTML={ { __html: menuItem.title } }>
+									
+									</Link>
+                  </li>
+								) ) : null }
               </ul>
             </div>
           </div>

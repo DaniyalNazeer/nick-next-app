@@ -87,7 +87,7 @@ ul.navbar li a:hover {
   border-width: 170px 130px 135px 110px;
   border-style: solid;
   border-color: #36ba8fa8 transparent transparent #36ba8fa8;
-  width: 45%;
+  width: 40%;
   height: 42%;
   z-index: 3;
 }
@@ -189,4 +189,9 @@ ul#menu-footer-menu li a {
 }
 ul#menu-footer-menu-2 li a {
   text-decoration: underline;
+}
+
+.banner-inner-content h1 {
+  font-size: 52px;
+  width: 522px;
 }
