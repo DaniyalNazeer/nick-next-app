@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { isEmpty, isArray } from "lodash";
 import getPathNameFromUrl from "../../../../src/utils/miscellaneous";
+import {TailwindIcon } from '../../../../src/icons';
 
 
 const Header = ({ data }) => {
