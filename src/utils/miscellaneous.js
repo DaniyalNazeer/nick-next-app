@@ -49,12 +49,14 @@ export const getFormattedDate = ( theDate = '', locales = 'en-us' ) => {
  *
  * @return {String} URL pathname.
  */
-export const getPathNameFromUrl = ( url = '' ) => {
+export const getPathNameFromUrl = ( url = 'https://allycapitalgroup.chiccolacreative.com' ) => {
 	if ( ! url ) {
 		return '';
 	}
-	const theURL = new URL( url );
-	return theURL.pathname;
+
+	
+
+	return url.pathname;
 }
 
 /**

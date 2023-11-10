@@ -1,15 +1,13 @@
 "use client";
-import { useContext, useState } from "react";
+import {useState}  from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { isEmpty, isArray } from "lodash";
-import getPathNameFromUrl from "../../../../src/utils/miscellaneous";
-import {TailwindIcon } from '../../../../src/icons';
+import { isEmpty , isArray} from "lodash";
+import {getPathNameFromUrl} from "../../../../src/utils/miscellaneous.js";
 
 
 const Header = ({ data }) => {
    
- //console.log('ddddddd -------> ', data )
 
   const { headerMenuItems, siteDescription, siteLogoUrl, siteTitle } = data;
 
@@ -27,21 +25,20 @@ const Header = ({ data }) => {
             <div className="header-inner-data flex justify-around items-center">
               <Link href="/">
 
-              {
+        {
 				siteLogoUrl ? (
 				<img className="mr-2" src={ siteLogoUrl } alt={ `${ siteTitle } logo` }
 				width="800"
         height="800"/>
 				) : <TailwindIcon/>
-			    }
+			  }
                 
               </Link>
 
               <ul className="navbar flex">
               { ! isEmpty( headerMenuItems ) && headerMenuItems.length ? headerMenuItems.map( (menuItem, index ) => (
-									<li key={index } className="mr-2 ml-2">
-                  <Link key={ menuItem?.ID }
-									      href={menuItem?.url ?? '/' }
+									<li key={ menuItem?.ID } className="mr-2 ml-2">
+                  <Link href={menuItem?.url }
                         dangerouslySetInnerHTML={ { __html: menuItem.title } }>
 									
 									</Link>

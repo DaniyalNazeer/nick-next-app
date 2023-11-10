@@ -1,25 +1,19 @@
 import Image from "next/image";
 import Header from "./components/layouts/header";
 import Footer from "./components/layouts/footer";
-import bannerImg from "../public/images/banner.webp";
-import morisonImg from "../public/images/morrison.webp";
-import borofficeImg from "../public/images/boroffice.webp";
+import BaseLayout from './base-layout/base-layout'
+
+// export const getStaticProps = (async (context) => {
+//   const res = await fetch('https://api.github.com/repos/vercel/next.js')
+//   const repo = await res.json()
+
+//   console.log(repo);
+
+//   return { props: { repo } }
+// });
 
 
-// Header & Footer Endpoint Start
 
-const getData = async (context) => {
-  
-  const url = `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer`;
-
-  try {
-    const res = await fetch(url);
-    const HeaderFooter = await res.json();
-    return HeaderFooter;
-  } catch (error) {}
-};
-
-// Header & Footer Endpoint End
 
 // Home Banner Endpoint Start
 
@@ -68,9 +62,7 @@ const getPortfolioData = async (context) => {
 
 
 const Home = async (data) => {
-  const {
-    data: { header, footer },
-  } = await getData();
+ 
 
 const banners = await getBannerData();
 
@@ -90,8 +82,8 @@ const portfolioRes = portfolioData.map(portfoliosec => ({ text: portfoliosec.tit
  //console.log(portfolioRes[0].PortfolioBtnLabel) 
 
   return (
-    <div>
-      <Header data={header} />
+    <BaseLayout>
+    <div> 
 
       <main className="">
         <div className="banner-main-wrap">
@@ -128,9 +120,9 @@ const portfolioRes = portfolioData.map(portfoliosec => ({ text: portfoliosec.tit
               </div>
               <div className="about-info-box">
                 <h2>{aboutRes[0].text}</h2>
-                
+                <p>
                 {aboutRes[0].description}
-                
+                </p>
                 <a href="void:;" className="read-more flex flex-row justify-center">
                 
                 {aboutRes[0].aboutBtnLabel}
@@ -142,9 +134,9 @@ const portfolioRes = portfolioData.map(portfoliosec => ({ text: portfoliosec.tit
             <div className="about-info-inner flex flex-row items-center justify-center">
               <div className="about-info-box about-info-box2">
                 <h2>{portfolioRes[0].text}</h2>
-                
+                <p>
                 {portfolioRes[0].PortfolioDescription}
-                
+                </p>
                 <a href="void:;" className="read-more flex flex-row justify-center">
                 {portfolioRes[0].PortfolioBtnLabel}
                 </a>
@@ -159,11 +151,11 @@ const portfolioRes = portfolioData.map(portfoliosec => ({ text: portfoliosec.tit
               </div>
             </div>
           </div>
-        </div>
+        </div>   
       </main>
-
-      <Footer data={footer} />
+ 
     </div>
+    </BaseLayout>
   );
 };
 
